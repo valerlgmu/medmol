@@ -3,34 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Возможности МЕДМОЛ ЛГМУ</title>
+<title>Твои возможности МЕДМОЛ ЛГМУ</title>
 <meta name="description" content="Каталог студенческих возможностей ЛГМУ: наука, волонтёрство, спорт, культура, карьера, поддержка.">
 <meta name="theme-color" content="#0b3d91">
 <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 <style>
 :root {
-  --primary: #0b3d91;
-  --primary-dark: #062a6b;
-  --secondary: #1e5bb8;
-  --light-blue: #e8f0ff;
-  --accent: #f0a500;
-  --accent-bg: #fff7e6;
+  --primary: #0b3d91; --primary-dark: #062a6b; --secondary: #1e5bb8;
+  --light-blue: #e8f0ff; --accent: #f0a500; --accent-bg: #fff7e6;
   --bg-gradient: linear-gradient(135deg, #0b3d91 0%, #1e5bb8 100%);
   --shadow: 0 2px 10px rgba(11,61,145,0.10);
   --shadow-soft: 0 1px 4px rgba(11,61,145,0.06);
-  --radius: 10px;
-  --radius-sm: 6px;
-  --surface: #ffffff;
-  --surface-muted: #f5f8fd;
-  --border: #d8e2f0;
-  --text: #1a1a1a;
-  --text-muted: #5a6b85;
-  --link: #1e5bb8;
+  --radius: 10px; --radius-sm: 6px;
+  --surface: #ffffff; --surface-muted: #f5f8fd; --border: #d8e2f0;
+  --text: #1a1a1a; --text-muted: #5a6b85; --link: #1e5bb8;
   --focus-ring: 0 0 0 3px #ffb800, 0 0 0 5px rgba(11,61,145,0.4);
-  --safe-top: env(safe-area-inset-top, 0px);
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --safe-left: env(safe-area-inset-left, 0px);
-  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px); --safe-right: env(safe-area-inset-right, 0px);
 }
 [data-category="science"]   { --section: #0b3d91; --section-bg: #e8f0ff; }
 [data-category="volunteer"] { --section: #1a5f8c; --section-bg: #e3f2f8; }
@@ -38,10 +27,12 @@
 [data-category="culture"]   { --section: #3d4ba6; --section-bg: #eaebf8; }
 [data-category="patriot"]   { --section: #0a2e6b; --section-bg: #e0e8f5; }
 [data-category="council"]   { --section: #2c6ba0; --section-bg: #e6f0f8; }
+[data-category="profkom"]   { --section: #8a3d6b; --section-bg: #f5e6ef; }
 [data-category="career"]    { --section: #26468c; --section-bg: #e6ebf5; }
 [data-category="support"]   { --section: #1e4d8c; --section-bg: #e6eef7; }
 [data-category="psych"]     { --section: #4a3d8c; --section-bg: #ebe8f8; }
 [data-category="info"]      { --section: #0b3d91; --section-bg: #e8f0ff; }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -52,17 +43,21 @@ body {
 }
 .container { max-width: 950px; margin: 0 auto; }
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-.logos-bar { display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 24px; padding: 16px 24px; background: #ffffff; border-radius: var(--radius); box-shadow: var(--shadow); flex-wrap: wrap; }
+
+.logos-bar { display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 24px; padding: 16px 24px; background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); flex-wrap: wrap; }
 .logo { height: 60px; width: auto; max-width: 220px; object-fit: contain; display: block; }
 .logo-fallback { height: 60px; min-width: 120px; display: none; align-items: center; justify-content: center; background: var(--light-blue); border: 1px dashed var(--secondary); border-radius: 8px; color: var(--primary); font-weight: 600; font-size: 13px; padding: 0 16px; text-align: center; }
 .logos-divider { width: 1px; height: 50px; background: #c7d8f0; }
+
 h1 { color: #fff; text-align: center; font-size: 28px; margin-bottom: 10px; text-shadow: 0 1px 4px rgba(0,0,0,0.25); font-weight: 700; letter-spacing: -0.3px; }
 .subtitle { color: #dde8f7; text-align: center; margin-bottom: 22px; font-size: 15px; line-height: 1.55; max-width: 720px; margin-left: auto; margin-right: auto; }
+
 .filter-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; justify-content: center; }
 .chip { padding: 8px 14px; border-radius: 20px; border: 1.5px solid rgba(255,255,255,0.5); background: rgba(255,255,255,0.16); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s, border-color 0.2s, color 0.2s; font-family: inherit; }
 .chip:hover { background: rgba(255,255,255,0.3); border-color: rgba(255,255,255,0.9); }
 .chip:focus-visible { outline: none; box-shadow: var(--focus-ring); }
 .chip.active { background: #fff; color: var(--primary); border-color: #fff; }
+
 .toolbar { display: flex; gap: 10px; justify-content: center; margin-bottom: 14px; flex-wrap: wrap; }
 .toolbar input { flex: 1; min-width: 200px; max-width: 400px; padding: 11px 16px; border: none; border-radius: var(--radius-sm); font-size: 14px; outline: none; box-shadow: var(--shadow); font-family: inherit; color: var(--text); background: #fff; }
 .toolbar input:focus-visible { box-shadow: var(--focus-ring); }
@@ -71,6 +66,7 @@ h1 { color: #fff; text-align: center; font-size: 28px; margin-bottom: 10px; text
 .toolbar button:focus-visible { outline: none; box-shadow: var(--focus-ring); }
 .search-status { text-align: center; color: #fff; font-size: 13px; min-height: 20px; margin-bottom: 12px; padding: 0 10px; }
 .search-status[data-tone="empty"] { color: #ffd7d7; }
+
 .accordion-item { background: #fff; border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); border-left: 4px solid var(--section, var(--primary)); }
 .accordion-item.filtered-out, .accordion-item.hidden, .sub-item.hidden { display: none !important; }
 .accordion-item > summary, .sub-item > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 14px; transition: background 0.2s; user-select: none; }
@@ -85,6 +81,7 @@ h1 { color: #fff; text-align: center; font-size: 28px; margin-bottom: 10px; text
 .meta { display: block; font-size: 12px; color: var(--text-muted); margin-top: 3px; font-weight: 500; }
 .arrow { font-size: 16px; color: var(--section, var(--primary)); transition: transform 0.3s; flex-shrink: 0; }
 .accordion-item[open] > summary .arrow, .sub-item[open] > summary .sub-arrow { transform: rotate(180deg); }
+
 .body-content { padding: 14px 18px 18px; background: var(--surface-muted); border-top: 1px solid var(--border); animation: fadeSlide 0.25s ease; }
 @keyframes fadeSlide { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 .sub-item { background: #fff; border-radius: 8px; margin-bottom: 10px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-soft); }
@@ -92,7 +89,6 @@ h1 { color: #fff; text-align: center; font-size: 28px; margin-bottom: 10px; text
 .sub-item > summary { padding: 13px 16px; background: #fff; }
 .sub-item > summary:hover, .sub-item > summary:focus-visible { background: var(--section-bg, #f0f6ff); outline: none; }
 .sub-title-wrap { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
-.sub-icon { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; flex-shrink: 0; background: var(--section-bg, #f0f6ff); border: 1px solid var(--border); }
 .sub-title { font-size: 15px; font-weight: 600; color: var(--section, var(--secondary)); line-height: 1.3; }
 .sub-arrow { font-size: 13px; color: var(--section, var(--secondary)); transition: transform 0.3s; flex-shrink: 0; }
 .sub-content { padding: 12px 16px 16px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text); line-height: 1.6; background: #fbfdff; }
@@ -112,6 +108,7 @@ h1 { color: #fff; text-align: center; font-size: 28px; margin-bottom: 10px; text
 .sub-content > .sub-item .sub-title { font-size: 14px; font-weight: 600; line-height: 1.3; }
 .sub-content > .sub-item .sub-content { padding: 10px 14px 12px; font-size: 13px; }
 .sub-content > .sub-item .sub-content h4 { font-size: 11px; margin-top: 10px; }
+
 .info-accordion { background: #fff; border-radius: var(--radius); margin-top: 24px; margin-bottom: 24px; box-shadow: var(--shadow); border: 1px solid var(--border); border-left: 4px solid var(--accent); overflow: hidden; }
 .info-accordion > summary { list-style: none; cursor: pointer; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 14px; transition: background 0.2s; user-select: none; background: #fff; }
 .info-accordion > summary::-webkit-details-marker { display: none; }
@@ -124,6 +121,7 @@ h1 { color: #fff; text-align: center; font-size: 28px; margin-bottom: 10px; text
 .info-accordion-arrow { font-size: 16px; color: var(--primary); transition: transform 0.3s; flex-shrink: 0; }
 .info-accordion[open] > summary .info-accordion-arrow { transform: rotate(180deg); }
 .info-body { padding: 16px 20px 20px; background: var(--surface-muted); border-top: 1px solid var(--border); }
+
 .join-block { background: var(--accent-bg); border-left: 4px solid var(--accent); padding: 10px 14px; border-radius: 0 6px 6px 0; margin-top: 12px; font-size: 13px; color: #6b4400; }
 .join-block strong { color: #6b4400; display: block; margin-bottom: 3px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; }
 .join-block p { margin: 4px 0; }
@@ -136,6 +134,7 @@ h1 { color: #fff; text-align: center; font-size: 28px; margin-bottom: 10px; text
 .mini-card h4 { margin-top: 0 !important; }
 .highlight { background: var(--accent-bg); border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0; font-size: 14px; color: #6b4400; }
 .highlight strong { color: #6b4400; }
+
 .sub-footer { display: flex; gap: 14px; align-items: center; margin-top: 16px; padding: 12px 14px; background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--section, var(--secondary)); border-radius: 0 8px 8px 0; box-shadow: var(--shadow-soft); }
 .sub-qr { flex-shrink: 0; width: 84px; height: 84px; padding: 4px; background: #fff; border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .sub-qr canvas, .sub-qr img { display: block; width: 100% !important; height: 100% !important; }
@@ -148,14 +147,17 @@ h1 { color: #fff; text-align: center; font-size: 28px; margin-bottom: 10px; text
 .sub-contact-links { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 6px; }
 .sub-contact-links a { font-size: 12px; color: var(--link); text-decoration: none; border-bottom: 1px solid rgba(30,91,184,0.3); white-space: nowrap; }
 .sub-contact-links a:hover { border-bottom-color: var(--link); }
+
 .video-section { margin-top: 30px; margin-bottom: 20px; }
 .video-heading { color: #fff; text-align: center; font-size: 20px; font-weight: 700; margin-bottom: 14px; text-shadow: 0 1px 4px rgba(0,0,0,0.25); }
 .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); background: #000; }
 .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
 .share-section { text-align: center; margin: 20px 0; }
 .share-btn { padding: 11px 24px; border: none; border-radius: var(--radius-sm); background: #fff; color: var(--primary); font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: var(--shadow); transition: background 0.2s, transform 0.15s; font-family: inherit; }
 .share-btn:hover { background: var(--light-blue); }
 .share-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
 footer { text-align: center; color: #dde8f7; margin-top: 20px; font-size: 13px; padding-bottom: 20px; }
 footer a { color: #fff; }
 .footer-note { display: block; font-size: 12px; opacity: 0.85; margin-top: 6px; }
@@ -163,6 +165,7 @@ footer a { color: #fff; }
 .back-to-top.visible { opacity: 1; pointer-events: auto; }
 .back-to-top:hover { transform: translateY(-3px); }
 .back-to-top:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
 @media (max-width: 600px) {
   body { padding: calc(16px + var(--safe-top)) calc(10px + var(--safe-right)) calc(60px + var(--safe-bottom)) calc(10px + var(--safe-left)); }
   h1 { font-size: 22px; }
@@ -175,7 +178,6 @@ footer a { color: #fff; }
   .icon { font-size: 22px; width: 38px; height: 38px; }
   .sub-item > summary { padding: 12px 14px; }
   .sub-title { font-size: 14px; }
-  .sub-icon { width: 34px; height: 34px; }
   .toolbar { flex-direction: column; align-items: stretch; }
   .toolbar input { max-width: 100%; }
   .filter-chips { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px; }
@@ -234,6 +236,7 @@ footer a { color: #fff; }
   [data-category="culture"]   { --section: #a4a7f0; --section-bg: #1c1e3a; }
   [data-category="patriot"]   { --section: #8bb4ff; --section-bg: #131f38; }
   [data-category="council"]   { --section: #7bb8d8; --section-bg: #0f2a35; }
+  [data-category="profkom"]   { --section: #d98cbf; --section-bg: #2a1424; }
   [data-category="career"]    { --section: #99a8ee; --section-bg: #1a1e3d; }
   [data-category="support"]   { --section: #8bb4ff; --section-bg: #131f38; }
   [data-category="psych"]     { --section: #b3a3e8; --section-bg: #24193a; }
@@ -247,14 +250,7 @@ html[data-vk-theme="dark"] {
   --shadow: 0 2px 10px rgba(0,0,0,0.4); --shadow-soft: 0 1px 4px rgba(0,0,0,0.3);
 }
 html[data-vk-theme="dark"] body { background: var(--bg-gradient); }
-html[data-vk-theme="dark"] .logos-bar,
-html[data-vk-theme="dark"] .accordion-item,
-html[data-vk-theme="dark"] .accordion-item > summary,
-html[data-vk-theme="dark"] .sub-item,
-html[data-vk-theme="dark"] .sub-item > summary,
-html[data-vk-theme="dark"] .sub-footer,
-html[data-vk-theme="dark"] .info-accordion,
-html[data-vk-theme="dark"] .info-accordion > summary { background: #10192c; }
+html[data-vk-theme="dark"] .logos-bar, html[data-vk-theme="dark"] .accordion-item, html[data-vk-theme="dark"] .accordion-item > summary, html[data-vk-theme="dark"] .sub-item, html[data-vk-theme="dark"] .sub-item > summary, html[data-vk-theme="dark"] .sub-footer, html[data-vk-theme="dark"] .info-accordion, html[data-vk-theme="dark"] .info-accordion > summary { background: #10192c; }
 html[data-vk-theme="dark"] .sub-content { background: #0a1220; color: var(--text); }
 html[data-vk-theme="dark"] .sub-content h4 { color: #8bb4ff; }
 html[data-vk-theme="dark"] .sub-content strong { color: #b3ccff; }
@@ -281,6 +277,7 @@ html[data-vk-theme="dark"] [data-category="sport"]     { --section: #8bb4ff; --s
 html[data-vk-theme="dark"] [data-category="culture"]   { --section: #a4a7f0; --section-bg: #1c1e3a; }
 html[data-vk-theme="dark"] [data-category="patriot"]   { --section: #8bb4ff; --section-bg: #131f38; }
 html[data-vk-theme="dark"] [data-category="council"]   { --section: #7bb8d8; --section-bg: #0f2a35; }
+html[data-vk-theme="dark"] [data-category="profkom"]   { --section: #d98cbf; --section-bg: #2a1424; }
 html[data-vk-theme="dark"] [data-category="career"]    { --section: #99a8ee; --section-bg: #1a1e3d; }
 html[data-vk-theme="dark"] [data-category="support"]   { --section: #8bb4ff; --section-bg: #131f38; }
 html[data-vk-theme="dark"] [data-category="psych"]     { --section: #b3a3e8; --section-bg: #24193a; }
@@ -319,53 +316,58 @@ html[data-vk-theme="light"] {
   }
 </script>
 <div class="container">
-<header class="logos-bar">
-  <img src="https://orelmed.org/Obyavlenie/2026/medmol/1b.jpg" alt="МЕДМОЛ" class="logo" id="logo-medmol" decoding="async">
-  <div class="logo-fallback" id="fallback-medmol" role="img" aria-label="Логотип МЕДМОЛ">ЛОГОТИП МЕДМОЛ</div>
-  <div class="logos-divider" aria-hidden="true"></div>
-  <img src="https://sh-roskoshnyanskaya-r181.gosweb.gosuslugi.ru/netcat_files/48/234/lgmu_logo.jpg" alt="ЛГМУ" class="logo" id="logo-lgmu" decoding="async">
-  <div class="logo-fallback" id="fallback-lgmu" role="img" aria-label="Логотип ЛГМУ">ЛОГОТИП ЛГМУ</div>
-</header>
-<h1>Возможности МЕДМОЛ ЛГМУ</h1>
-<p class="subtitle">Выбери направление — узнай, как присоединиться.</p>
-<nav class="filter-chips" aria-label="Фильтр по категориям">
-  <button type="button" class="chip active" data-filter="all">Все</button>
-  <button type="button" class="chip" data-filter="science">Наука</button>
-  <button type="button" class="chip" data-filter="volunteer">Волонтёрство</button>
-  <button type="button" class="chip" data-filter="sport">Спорт</button>
-  <button type="button" class="chip" data-filter="culture">Культура</button>
-  <button type="button" class="chip" data-filter="patriot">Патриотика</button>
-  <button type="button" class="chip" data-filter="council">Студсовет</button>
-  <button type="button" class="chip" data-filter="career">Карьера</button>
-  <button type="button" class="chip" data-filter="support">Поддержка</button>
-  <button type="button" class="chip" data-filter="psych">Психология</button>
-  <button type="button" class="chip" data-filter="info">О проекте</button>
-</nav>
-<div class="toolbar" role="search">
-  <label for="searchInput" class="visually-hidden">Поиск по разделам</label>
-  <input type="search" id="searchInput" placeholder="Поиск: волонтёр, спорт, стипендия…" autocomplete="off">
-  <button type="button" id="expandAllBtn">Развернуть все</button>
-  <button type="button" id="collapseAllBtn">Свернуть все</button>
-</div>
-<p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
-<main class="accordion" id="accordion">
-    <details class="accordion-item" data-category="science">
+
+  <header class="logos-bar">
+    <img src="https://orelmed.org/Obyavlenie/2026/medmol/1b.jpg" alt="МЕДМОЛ" class="logo" id="logo-medmol" decoding="async">
+    <div class="logo-fallback" id="fallback-medmol" role="img" aria-label="Логотип МЕДМОЛ">ЛОГОТИП МЕДМОЛ</div>
+    <div class="logos-divider" aria-hidden="true"></div>
+    <img src="https://sh-roskoshnyanskaya-r181.gosweb.gosuslugi.ru/netcat_files/48/234/lgmu_logo.jpg" alt="ЛГМУ" class="logo" id="logo-lgmu" decoding="async">
+    <div class="logo-fallback" id="fallback-lgmu" role="img" aria-label="Логотип ЛГМУ">ЛОГОТИП ЛГМУ</div>
+  </header>
+
+  <h1>Твои возможности МЕДМОЛ ЛГМУ</h1>
+  <p class="subtitle">Выбери направление — узнай, как присоединиться.</p>
+
+  <nav class="filter-chips" aria-label="Фильтр по категориям">
+    <button type="button" class="chip active" data-filter="all">Все</button>
+    <button type="button" class="chip" data-filter="science">Наука</button>
+    <button type="button" class="chip" data-filter="volunteer">Волонтёрство</button>
+    <button type="button" class="chip" data-filter="sport">Спорт</button>
+    <button type="button" class="chip" data-filter="culture">Культура</button>
+    <button type="button" class="chip" data-filter="patriot">Патриотика</button>
+    <button type="button" class="chip" data-filter="council">Студсовет</button>
+    <button type="button" class="chip" data-filter="profkom">Профсоюз</button>
+    <button type="button" class="chip" data-filter="career">Карьера</button>
+    <button type="button" class="chip" data-filter="support">Поддержка</button>
+    <button type="button" class="chip" data-filter="psych">Психология</button>
+    <button type="button" class="chip" data-filter="info">О проекте</button>
+  </nav>
+
+  <div class="toolbar" role="search">
+    <label for="searchInput" class="visually-hidden">Поиск по разделам</label>
+    <input type="search" id="searchInput" placeholder="Поиск: волонтёр, спорт, стипендия…" autocomplete="off">
+    <button type="button" id="expandAllBtn">Развернуть все</button>
+    <button type="button" id="collapseAllBtn">Свернуть все</button>
+  </div>
+
+  <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+
+  <main class="accordion" id="accordion">
+      <details class="accordion-item" data-category="science">
   <summary class="accordion-header">
     <span class="header-left">
       <span class="icon" aria-hidden="true">🔬</span>
       <span class="header-text">
         <span class="title">Наука и научные кружки</span>
-        <span class="meta">4 направления</span>
+        <span class="meta">НОМУС · 45 кафедр · публикации</span>
       </span>
     </span>
     <span class="arrow" aria-hidden="true">▼</span>
   </summary>
   <div class="body-content">
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">НОМУС — научное общество молодых учёных и студентов</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">НОМУС — научное общество молодых учёных и студентов</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Сообщество, где ты получаешь первый исследовательский опыт: от идеи до публикации и выступления на конференциях.</p>
         <h4>Что привлекает студентов</h4>
@@ -383,135 +385,380 @@ html[data-vk-theme="light"] {
           <li>«LINGUA LATINA VIVA»</li>
           <li>Олимпиада по терапии</li>
         </ul>
-        <div class="sub-footer" data-qr="https://vk.com/sno_lgmu" data-person="Тананакина Татьяна Павловна" data-role="Научный руководитель НОМУС" data-vk="https://vk.com/sno_lgmu" data-avatar="https://ui-avatars.com/api/?name=Т+П&background=0b3d91&color=fff&size=88"></div>
+        <div class="sub-footer" data-person="Тананакина Татьяна Павловна" data-role="Научный руководитель НОМУС · научный опыт, конференции" data-vk="https://vk.com/sno_lgmu" data-qr="https://vk.com/sno_lgmu" data-avatar="https://ui-avatars.com/api/?name=Т+П&background=0b3d91&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Студенческие научные кружки (СНК) кафедр</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Научные кружки кафедр</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
-        <p>У каждой кафедры — свой СНК. Реальная наука: лабораторная работа, выезды, интерактив.</p>
+        <p>У каждой кафедры — свой СНК. Кликни на нужную кафедру, чтобы узнать, чем занимается кружок.</p>
+
         <details class="sub-item">
-          <summary class="sub-header">
-            <span class="sub-title-wrap"><span class="sub-title">Медицинская и фармацевтическая химия</span></span>
-            <span class="sub-arrow" aria-hidden="true">▼</span>
-          </summary>
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Акушерства и гинекологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
           <div class="sub-content">
-            <ul>
-              <li>Синтез лекарственных субстанций</li>
-              <li>Механизмы апоптоза в культурах клеток</li>
-              <li>Биохимические показатели здоровья</li>
-            </ul>
-            <div class="sub-footer" data-role="Кафедра медицинской и фармацевтической химии" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Х&background=0b3d91&color=fff&size=88"></div>
+            <p>Ведение беременности, роды, гинекологические операции, разбор клинических случаев и участие в олимпиадах.</p>
+            <div class="sub-footer" data-role="Староста СНК · акушерство и гинекология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=А&background=0b3d91&color=fff&size=88"></div>
           </div>
         </details>
+
         <details class="sub-item">
-          <summary class="sub-header">
-            <span class="sub-title-wrap"><span class="sub-title">Нормальная физиология — «PHYSIOLAND»</span></span>
-            <span class="sub-arrow" aria-hidden="true">▼</span>
-          </summary>
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Анатомии человека</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
           <div class="sub-content">
-            <ul>
-              <li>Обследования школьников в лицеях</li>
-              <li>Итоговые заседания с докладами</li>
-            </ul>
-            <div class="sub-footer" data-role="Кафедра нормальной физиологии" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=0b3d91&color=fff&size=88"></div>
+            <p>Работа с анатомическими препаратами, топографическая анатомия, подготовка к олимпиадам по анатомии.</p>
+            <div class="sub-footer" data-role="Староста СНК · анатомия человека" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=А&background=0b3d91&color=fff&size=88"></div>
           </div>
         </details>
+
         <details class="sub-item">
-          <summary class="sub-header">
-            <span class="sub-title-wrap"><span class="sub-title">Психиатрия и наркология</span></span>
-            <span class="sub-arrow" aria-hidden="true">▼</span>
-          </summary>
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Внутренней медицины, пульмонологии и аллергологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
           <div class="sub-content">
-            <ul>
-              <li>Психологические тесты на «Ярмарке науки»</li>
-              <li>Клинико-патофизиологическое направление</li>
-            </ul>
-            <div class="sub-footer" data-role="Кафедра психиатрии и наркологии" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=П&background=0b3d91&color=fff&size=88"></div>
+            <p>Диагностика и лечение болезней лёгких, аллергии, разбор сложных терапевтических пациентов.</p>
+            <div class="sub-footer" data-role="Староста СНК · внутренняя медицина" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=В&background=0b3d91&color=fff&size=88"></div>
           </div>
         </details>
+
         <details class="sub-item">
-          <summary class="sub-header">
-            <span class="sub-title-wrap"><span class="sub-title">Акушерство и гинекология</span></span>
-            <span class="sub-arrow" aria-hidden="true">▼</span>
-          </summary>
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Госпитальной терапии, эндокринологии и профпатологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
           <div class="sub-content">
-            <ul>
-              <li>Практические демонстрации</li>
-              <li>Гомеостаз при гестозе, эндоскопические методы</li>
-            </ul>
-            <div class="sub-footer" data-role="Кафедра акушерства и гинекологии" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=А&background=0b3d91&color=fff&size=88"></div>
+            <p>Сахарный диабет, болезни щитовидной железы, профессиональные заболевания, ведение сложных пациентов в стационаре.</p>
+            <div class="sub-footer" data-role="Староста СНК · госпитальная терапия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Г&background=0b3d91&color=fff&size=88"></div>
           </div>
         </details>
+
         <details class="sub-item">
-          <summary class="sub-header">
-            <span class="sub-title-wrap"><span class="sub-title">Микробиология и вирусология</span></span>
-            <span class="sub-arrow" aria-hidden="true">▼</span>
-          </summary>
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Инфекционных болезней и эпидемиологии им. В.М. Фролова</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
           <div class="sub-content">
-            <ul>
-              <li>Итоговые собрания по НИР</li>
-              <li>Совместные конференции с кафедрой инфекционных болезней</li>
-            </ul>
-            <div class="sub-footer" data-role="Кафедра микробиологии и вирусологии" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=М&background=0b3d91&color=fff&size=88"></div>
+            <p>Особо опасные инфекции, эпидемиологические расследования, работа с реальными клиническими случаями.</p>
+            <div class="sub-footer" data-role="Староста СНК · инфекционные болезни" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=И&background=0b3d91&color=fff&size=88"></div>
           </div>
         </details>
+
         <details class="sub-item">
-          <summary class="sub-header">
-            <span class="sub-title-wrap"><span class="sub-title">Фтизиатрия, клиническая иммунология и медицинская генетика</span></span>
-            <span class="sub-arrow" aria-hidden="true">▼</span>
-          </summary>
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Лучевой диагностики им. А.Н. Шкондина</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
           <div class="sub-content">
-            <ul>
-              <li>Межрегиональная олимпиада по фтизиатрии</li>
-              <li>Межвузовские заседания</li>
-            </ul>
-            <div class="sub-footer" data-role="Кафедра фтизиатрии и клинической иммунологии" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=0b3d91&color=fff&size=88"></div>
+            <p>Чтение рентгена, КТ, МРТ и УЗИ, разбор снимков с преподавателями, современная визуализация.</p>
+            <div class="sub-footer" data-role="Староста СНК · лучевая диагностика" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Л&background=0b3d91&color=fff&size=88"></div>
           </div>
         </details>
+
         <details class="sub-item">
-          <summary class="sub-header">
-            <span class="sub-title-wrap"><span class="sub-title">Общая врачебная практика и медицинская реабилитация</span></span>
-            <span class="sub-arrow" aria-hidden="true">▼</span>
-          </summary>
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Общей врачебной практики и медицинской реабилитации</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
           <div class="sub-content">
-            <ul>
-              <li>Международные конкурсы научных работ</li>
-              <li>Научный руководитель — к.м.н., доцент</li>
-            </ul>
-            <div class="sub-footer" data-role="Кафедра общей врачебной практики и медицинской реабилитации" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=0b3d91&color=fff&size=88"></div>
+            <p>Семейная медицина, восстановление после болезней и травм, международные конкурсы научных работ.</p>
+            <div class="sub-footer" data-role="Староста СНК · общая врачебная практика" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=0b3d91&color=fff&size=88"></div>
           </div>
         </details>
+
         <details class="sub-item">
-          <summary class="sub-header">
-            <span class="sub-title-wrap"><span class="sub-title">Фундаментальная и клиническая фармакология</span></span>
-            <span class="sub-arrow" aria-hidden="true">▼</span>
-          </summary>
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Общей и факультетской хирургии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
           <div class="sub-content">
-            <ul><li>Разработка анальгетиков — патент Роспатента</li></ul>
-            <div class="sub-footer" data-role="Кафедра фундаментальной и клинической фармакологии" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=0b3d91&color=fff&size=88"></div>
+            <p>Хирургические операции, швы, работа в операционной, участие в хирургических олимпиадах.</p>
+            <div class="sub-footer" data-role="Староста СНК · общая и факультетская хирургия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Х&background=0b3d91&color=fff&size=88"></div>
           </div>
         </details>
+
         <details class="sub-item">
-          <summary class="sub-header">
-            <span class="sub-title-wrap"><span class="sub-title">Медицинская биология</span></span>
-            <span class="sub-arrow" aria-hidden="true">▼</span>
-          </summary>
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Травматологии и ортопедии им. В.К. Ивченко</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
           <div class="sub-content">
-            <ul><li>Записаться можно прямо на кафедре</li></ul>
-            <div class="sub-footer" data-role="Кафедра медицинской биологии" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Б&background=0b3d91&color=fff&size=88"></div>
+            <p>Первая помощь при переломах, гипсование, операции на костях и суставах, работа с травматологическими пациентами.</p>
+            <div class="sub-footer" data-role="Староста СНК · травматология и ортопедия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Т&background=0b3d91&color=fff&size=88"></div>
           </div>
         </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Пропедевтики внутренних болезней</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Первые навыки осмотра пациента: пальпация, перкуссия, аускультация, расшифровка ЭКГ.</p>
+            <div class="sub-footer" data-role="Староста СНК · пропедевтика внутренних болезней" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=П&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Факультетской терапии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Разбор сложных терапевтических диагнозов, ревматология, кардиология, пульмонология.</p>
+            <div class="sub-footer" data-role="Староста СНК · факультетская терапия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Нормальной физиологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Функциональная диагностика, ЭКГ, спирометрия, обследование школьников — «PHYSIOLAND».</p>
+            <div class="sub-footer" data-role="Староста СНК · нормальная физиология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Н&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Гигиены и экологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Санитарные исследования воды, воздуха, продуктов, оценка влияния среды на здоровье.</p>
+            <div class="sub-footer" data-role="Староста СНК · гигиена и экология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Г&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Дерматовенерологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Кожные болезни, дерматоскопия, венерология, фотодинамическая терапия, разбор редких случаев.</p>
+            <div class="sub-footer" data-role="Староста СНК · дерматовенерология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Д&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Микробиологии и вирусологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Работа с культурами бактерий и вирусов, ПЦР, ИФА, разбор инфекций с кафедрой инфекционных болезней.</p>
+            <div class="sub-footer" data-role="Староста СНК · микробиология и вирусология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=М&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Патологической анатомии и судебной медицины</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Вскрытия, микроскопия, судебно-медицинская экспертиза, работа с биопсийным материалом.</p>
+            <div class="sub-footer" data-role="Староста СНК · патологическая анатомия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=П&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Патофизиологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Механизмы развития болезней, эксперименты на животных, моделирование патологий.</p>
+            <div class="sub-footer" data-role="Староста СНК · патофизиология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=П&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Педиатрии и детских инфекций</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Детские болезни, корь, краснуха, вакцинация, разбор педиатрических случаев, работа с детьми.</p>
+            <div class="sub-footer" data-role="Староста СНК · педиатрия и детские инфекции" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=П&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Педиатрии и детской хирургии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Детская хирургия, врождённые пороки, операции у новорождённых, неотложные состояния.</p>
+            <div class="sub-footer" data-role="Староста СНК · педиатрия и детская хирургия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=П&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Психиатрии и наркологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Психические расстройства, наркология, психотерапия, интерактивные тесты на «Ярмарке науки».</p>
+            <div class="sub-footer" data-role="Староста СНК · психиатрия и наркология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=П&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Медицинской биологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Генетика, молекулярная биология, ПЦР-диагностика, работа с микроскопом и культурами клеток.</p>
+            <div class="sub-footer" data-role="Староста СНК · медицинская биология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Б&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Биологической химии с курсом клинической лабораторной диагностики</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Биохимические анализы, работа с лабораторным оборудованием, расшифровка результатов, клиническая диагностика.</p>
+            <div class="sub-footer" data-role="Староста СНК · биологическая химия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Б&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Технологии лекарств, организации и экономики фармации</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Изготовление лекарств в аптеке, мази, растворы, таблетки, экономика фармацевтического бизнеса.</p>
+            <div class="sub-footer" data-role="Староста СНК · технология лекарств" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Т&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Медицинской и фармацевтической химии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Синтез лекарственных субстанций, химический анализ, работа в лаборатории, разработка новых соединений.</p>
+            <div class="sub-footer" data-role="Староста СНК · медицинская и фармацевтическая химия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Х&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Фундаментальной и клинической фармакологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Разработка анальгетиков, патент Роспатента, испытания препаратов, клинические исследования.</p>
+            <div class="sub-footer" data-role="Староста СНК · фундаментальная и клиническая фармакология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Гистологии, цитологии и эмбриологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Микроскопия тканей, работа с гистологическими препаратами, изучение развития эмбриона.</p>
+            <div class="sub-footer" data-role="Староста СНК · гистология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Г&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Медицинской, биологической физики и информатики</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Медицинская техника, работа с приборами, программирование, статистика, обработка данных.</p>
+            <div class="sub-footer" data-role="Староста СНК · медицинская физика и информатика" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Офтальмологии и оториноларингологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Диагностика зрения, микрохирургия глаза, ЛОР-заболевания, отоскопия, слуховые тесты.</p>
+            <div class="sub-footer" data-role="Староста СНК · офтальмология и оториноларингология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Ортопедической стоматологии и ортодонтии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Коронки, протезы, брекеты, работа с зубным техником, планирование ортодонтического лечения.</p>
+            <div class="sub-footer" data-role="Староста СНК · ортопедическая стоматология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Хирургической стоматологии и челюстно-лицевой хирургии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Удаление зубов, имплантация, операции на челюстях, лечение травм лица, челюстно-лицевая хирургия.</p>
+            <div class="sub-footer" data-role="Староста СНК · хирургическая стоматология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Х&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Терапевтической и детской стоматологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Лечение кариеса, пломбирование, детская стоматология, работа с детьми и подростками.</p>
+            <div class="sub-footer" data-role="Староста СНК · терапевтическая и детская стоматология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Т&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Военно-медицинской подготовки и безопасности жизнедеятельности</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Тактическая медицина, первая помощь в бою, работа в экстремальных ситуациях, военно-полевая хирургия.</p>
+            <div class="sub-footer" data-role="Староста СНК · военно-медицинская подготовка" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=В&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Иностранных языков, латинского языка и медицинской терминологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Медицинская латынь, английский для врачей, конференция «LINGUA LATINA VIVA», перевод медицинских текстов.</p>
+            <div class="sub-footer" data-role="Староста СНК · иностранные языки" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=И&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Физической культуры</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Спортивная медицина, ЛФК, реабилитация, оценка физической подготовленности студентов.</p>
+            <div class="sub-footer" data-role="Староста СНК · физическая культура" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Русского языка и гуманитарных наук</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>История медицины, философия врачевания, работа с научными текстами и публикациями.</p>
+            <div class="sub-footer" data-role="Староста СНК · русский язык и гуманитарные науки" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Р&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Фтизиатрии, клинической иммунологии и медицинской генетики</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Туберкулёз, иммунологические анализы, генетические исследования, межрегиональные олимпиады.</p>
+            <div class="sub-footer" data-role="Староста СНК · фтизиатрия и клиническая иммунология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Акушерства, гинекологии и перинатологии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Ведение беременности, патология плода, перинатальная диагностика, неонатология.</p>
+            <div class="sub-footer" data-role="Староста СНК · акушерство, гинекология и перинатология" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=А&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Анестезиологии, интенсивной терапии и экстренной медицинской помощи</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Первая помощь, скорая помощь, реанимация, анестезиологическое пособие и интенсивная терапия.</p>
+            <div class="sub-footer" data-role="Староста СНК · анестезиология и интенсивная терапия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=А&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Внутренней медицины</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Терапевтические болезни, диагностика, разбор сложных пациентов, курация в стационаре.</p>
+            <div class="sub-footer" data-role="Староста СНК · внутренняя медицина" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=В&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Госпитальной хирургии, урологии и онкологии им. проф. Ольшанецкого А.А.</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Онкохирургия, урология, операции на органах брюшной полости, работа в операционной.</p>
+            <div class="sub-footer" data-role="Староста СНК · госпитальная хирургия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Г&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Нервных болезней и нейрохирургии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Неврологический осмотр, инсульт, эпилепсия, нейрохирургические операции, МРТ головного мозга.</p>
+            <div class="sub-footer" data-role="Староста СНК · нервные болезни и нейрохирургия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Н&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Педиатрии ДПО и пропедевтики педиатрии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Методы осмотра детей, педиатрическая пропедевтика, обучение врачей-педиатров, работа с родителями.</p>
+            <div class="sub-footer" data-role="Староста СНК · педиатрия ДПО" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=П&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Общественного здоровья и здравоохранения</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Статистика здравоохранения, организация медицинской помощи, медицинское право, экономика медицины.</p>
+            <div class="sub-footer" data-role="Староста СНК · общественное здоровье" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Топографической анатомии и оперативной хирургии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Работа на биоматериале, хирургические швы, доступы к органам, подготовка к хирургическим олимпиадам.</p>
+            <div class="sub-footer" data-role="Староста СНК · топографическая анатомия" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Т&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
+        <details class="sub-item">
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Философии и социальных наук</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+          <div class="sub-content">
+            <p>Философия медицины, биоэтика, история врачевания, обсуждение медицинских дилемм.</p>
+            <div class="sub-footer" data-role="Староста СНК · философия и социальные науки" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=0b3d91&color=fff&size=88"></div>
+          </div>
+        </details>
+
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Научные мероприятия</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Научные мероприятия</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Ярмарка науки</h4>
         <p>Ежегодная выставка всех СНК. Сотни студентов подают заявки на вступление прямо на стендах.</p>
@@ -526,14 +773,12 @@ html[data-vk-theme="light"] {
           <li>«Искусство врачевания»</li>
           <li>«LINGUA LATINA VIVA»</li>
         </ul>
-        <div class="sub-footer" data-qr="https://vk.com/sno_lgmu" data-role="НОМУС — координация мероприятий" data-vk="https://vk.com/sno_lgmu" data-avatar="https://ui-avatars.com/api/?name=Н&background=0b3d91&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="НОМУС · координация научных мероприятий" data-vk="https://vk.com/sno_lgmu" data-qr="https://vk.com/sno_lgmu" data-avatar="https://ui-avatars.com/api/?name=Н&background=0b3d91&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Публикации, гранты, патенты</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Публикации, гранты, патенты</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Публикации</h4>
         <ul>
@@ -546,9 +791,10 @@ html[data-vk-theme="light"] {
           <li>РФФИ, РНФ</li>
           <li>Фонд содействия инновациям («У.М.Н.И.К», «Студенческий стартап»)</li>
         </ul>
-        <div class="sub-footer" data-role="Научный отдел ЛГМУ" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Н&background=0b3d91&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Научный отдел ЛГМУ · гранты и публикации" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Н&background=0b3d91&color=fff&size=88"></div>
       </div>
     </details>
+
   </div>
 </details>
 
@@ -558,18 +804,16 @@ html[data-vk-theme="light"] {
       <span class="icon" aria-hidden="true">🤝</span>
       <span class="header-text">
         <span class="title">Волонтёрство и добровольчество</span>
-        <span class="meta">3 организации · 7 направлений · наставничество</span>
+        <span class="meta">3 организации · донорство · наставничество</span>
       </span>
     </span>
     <span class="arrow" aria-hidden="true">▼</span>
   </summary>
   <div class="body-content">
     <p style="font-size:14px;color:var(--text-muted);margin-bottom:14px;">Волонтёрство — официальный путь к баллам при поступлении в ординатуру (до 100 баллов за критерий), практика и участие в федеральных проектах.</p>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">ВОД «Волонтёры-медики» ЛНР</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">ВОД «Волонтёры-медики» ЛНР</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Региональное отделение Всероссийского движения «Волонтёры-медики» на базе ЛГМУ. Более 350 студентов.</p>
         <h4>Направления</h4>
@@ -582,14 +826,12 @@ html[data-vk-theme="light"] {
           <li>Здоровый образ жизни</li>
           <li>Проект «Добро в село»</li>
         </ul>
-        <div class="sub-footer" data-qr="https://vk.com/volmedic_lnr" data-role="Координатор регионального отделения" data-vk="https://vk.com/volmedic_lnr" data-avatar="https://ui-avatars.com/api/?name=В&background=1a5f8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Координатор отделения · помощь в клиниках, обучение первой помощи" data-vk="https://vk.com/volmedic_lnr" data-qr="https://vk.com/volmedic_lnr" data-avatar="https://ui-avatars.com/api/?name=В&background=1a5f8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Отряд «Добродетель»</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Отряд «Добродетель»</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Отряд на педиатрическом факультете. Девиз: «Волонтёрское движение — добродетелей совет!»</p>
         <h4>Специализация</h4>
@@ -599,14 +841,12 @@ html[data-vk-theme="light"] {
           <li>Поздравления ветеранов ВОВ</li>
           <li>Наставничество между курсами</li>
         </ul>
-        <div class="sub-footer" data-role="Руководитель отряда «Добродетель»" data-person="Лаптинова Татьяна Васильевна" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Т+В&background=1a5f8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-person="Лаптинова Татьяна Васильевна" data-role="Руководитель отряда · работа с детьми и ветеранами" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Т+В&background=1a5f8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Отряд «Твори добро»</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Отряд «Твори добро»</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Деятельность</h4>
         <ul>
@@ -615,55 +855,35 @@ html[data-vk-theme="light"] {
           <li>Гуманитарный груз в детские учреждения ЛНР</li>
           <li>Совместные акции с другими отрядами</li>
         </ul>
-        <div class="sub-footer" data-role="Руководитель отряда «Твори добро»" data-person="Буйниченко Д.А." data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Д+А&background=1a5f8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-person="Буйниченко Д.А." data-role="Руководитель отряда · донорство и помощь детям" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Д+А&background=1a5f8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Направления и проекты</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Донорское движение ЛГМУ</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
-        <div class="mini-card">
-          <h4>Первая помощь</h4>
-          <ul>
-            <li>СЛР, приём Геймлиха, наложение жгута</li>
-            <li>Мастер-классы для школьников и работников организаций</li>
-            <li>Проект «М.О.З.Г. 4,5» — распознавание инсульта</li>
-            <li>Сертификация в Луганском центре медицины катастроф</li>
-          </ul>
-        </div>
-        <div class="mini-card">
-          <h4>Донорство</h4>
-          <ul>
-            <li>Коллективные сдачи в ЛРСПК (ул. Оборонная, 1а)</li>
-            <li>«Кубок молодёжного донорства»</li>
-            <li>Федеральный регистр доноров костного мозга</li>
-          </ul>
-        </div>
-        <div class="mini-card">
-          <h4>Помощь детям</h4>
-          <ul>
-            <li>Шефство над детскими домами и отделениями больниц</li>
-            <li>Акция «С любовью в сердце»</li>
-          </ul>
-        </div>
-        <div class="mini-card">
-          <h4>Волонтёрство в СВО</h4>
-          <ul>
-            <li>Сбор гуманитарной помощи для фронта</li>
-            <li>Поздравления бойцов с праздниками</li>
-            <li><strong>До 100 баллов в ординатуру</strong> — стаж ≥150 часов</li>
-          </ul>
-        </div>
-        <div class="sub-footer" data-qr="https://vk.com/volmedic_lnr" data-role="Координация волонтёрских проектов" data-vk="https://vk.com/volmedic_lnr" data-avatar="https://ui-avatars.com/api/?name=В&background=1a5f8c&color=fff&size=88"></div>
+        <p>Регулярные сдачи крови и участие в федеральных донорских проектах. Донорство — это реальная помощь и путь к баллам в ординатуру.</p>
+        <h4>Что делают</h4>
+        <ul>
+          <li>Коллективные сдачи крови в ЛРСПК (ул. Оборонная, 1а)</li>
+          <li>Участие в «Кубке молодёжного донорства» — всероссийский конкурс среди вузов</li>
+          <li>Вступление в Федеральный регистр доноров костного мозга</li>
+          <li>Просветительские акции о важности донорства</li>
+        </ul>
+        <h4>Что даёт студенту</h4>
+        <ul>
+          <li>Реальный вклад в спасение жизней</li>
+          <li>Льготы донора: компенсация питания, дополнительный день отдыха</li>
+          <li>Баллы за донорство в критерии «Н» при поступлении в ординатуру</li>
+        </ul>
+        <h4>Часы работы ЛРСПК</h4>
+        <p>Пн–пт, 08:00–14:00. Адрес: ул. Оборонная, 1а.</p>
+        <div class="sub-footer" data-role="Координатор донорского движения ЛГМУ · сдача крови и регистр" data-vk="https://vk.com/volmedic_lnr" data-qr="https://vk.com/volmedic_lnr" data-avatar="https://ui-avatars.com/api/?name=Д&background=1a5f8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Баллы в ординатуру</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Баллы в ординатуру</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Три критерия</h4>
         <ul>
@@ -681,14 +901,12 @@ html[data-vk-theme="light"] {
           <li>Выписка из личного кабинета — основной документ</li>
           <li>Справка от организации — дополнительно</li>
         </ul>
-        <div class="sub-footer" data-role="Приёмная комиссия ординатуры" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=1a5f8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Приёмная комиссия ординатуры · баллы за волонтёрство" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=1a5f8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Добро.рф — платформа учёта</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Добро.рф — платформа учёта</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Федеральная платформа учёта волонтёрских часов и верификации стажа.</p>
         <h4>Что даёт</h4>
@@ -698,14 +916,12 @@ html[data-vk-theme="light"] {
           <li>Курсы Добро.Университета</li>
           <li>Конкурсы и премии</li>
         </ul>
-        <div class="sub-footer" data-qr="https://vk.com/dobro_ru" data-person="Кисель Константин Витальевич" data-role="Администратор Добро.рф в ЛГМУ" data-vk="https://vk.com/dobro_ru" data-avatar="https://ui-avatars.com/api/?name=К+В&background=1a5f8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-person="Кисель Константин Витальевич" data-role="Администратор Добро.рф в ЛГМУ · верификация часов" data-vk="https://vk.com/dobro_ru" data-qr="https://vk.com/dobro_ru" data-avatar="https://ui-avatars.com/api/?name=К+В&background=1a5f8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Программа «Обучение служением»</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Программа «Обучение служением»</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Образовательная методика: теория + практическая общественная деятельность.</p>
         <h4>Кто участвует</h4>
@@ -725,14 +941,12 @@ html[data-vk-theme="light"] {
           <li>80+ участников СВО получили помощь</li>
           <li>Профессор Колчина А.А. и ассистент Стручалина К.Е. представили программу на всероссийском семинаре в Центре знаний «Машук» (2026)</li>
         </ul>
-        <div class="sub-footer" data-role="Кафедра общей врачебной практики" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=1a5f8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Кафедра общей врачебной практики · реабилитация СВО" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=1a5f8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Наставничество в ЛГМУ</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Наставничество в ЛГМУ</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>С 1 марта 2026 года выпускники медицинских вузов и колледжей работают с наставником.</p>
         <h4>Как работает</h4>
@@ -741,9 +955,10 @@ html[data-vk-theme="light"] {
           <li><strong>Выпускники:</strong> обязательный период наставничества (до 3 лет)</li>
           <li><strong>Молодые специалисты:</strong> адаптация и развитие</li>
         </ul>
-        <div class="sub-footer" data-role="Центр карьеры ЛГМУ" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ц&background=1a5f8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Центр карьеры · наставничество и адаптация" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ц&background=1a5f8c&color=fff&size=88"></div>
       </div>
     </details>
+
   </div>
 </details>
 
@@ -753,50 +968,156 @@ html[data-vk-theme="light"] {
       <span class="icon" aria-hidden="true">🏆</span>
       <span class="header-text">
         <span class="title">Спорт и физическая культура</span>
-        <span class="meta">4 направления</span>
+        <span class="meta">9 секций · соревнования · инфраструктура</span>
       </span>
     </span>
     <span class="arrow" aria-hidden="true">▼</span>
   </summary>
   <div class="body-content">
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Спортивный клуб «Медик»</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Спортивный клуб «Медик»</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
+        <p>Главный спортивный клуб ЛГМУ. Объединяет все секции, формирует сборные команды и организует турниры.</p>
         <h4>Что даёт</h4>
         <ul>
-          <li>Бесплатные секции и тренировки</li>
+          <li>Бесплатные секции и регулярные тренировки</li>
           <li>Инвентарь для сборных команд</li>
-          <li>Республиканские и всероссийские турниры</li>
+          <li>Выезды на республиканские и всероссийские турниры</li>
           <li>Поддержание формы будущего врача</li>
         </ul>
-        <div class="sub-footer" data-role="Зав. кафедрой физической культуры" data-person="Сероштан Владимир Михайлович" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=В+М&background=1e5bb8&color=fff&size=88"></div>
+        <div class="sub-footer" data-person="Сероштан Владимир Михайлович" data-role="Зав. кафедрой физической культуры · секции и сборные" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=В+М&background=1e5bb8&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Секции и направления</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Баскетбол</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
-        <h4>Виды спорта</h4>
+        <p>Динамичная игра для тех, кто любит команду и скорость. Тренировки — в большом баскетбольном зале Дворца спорта.</p>
+        <h4>Что даёт</h4>
         <ul>
-          <li>Игровые: футбол, баскетбол, волейбол, настольный теннис</li>
-          <li>Силовые: пауэрлифтинг</li>
-          <li>Лёгкая атлетика</li>
-          <li>Шахматы, дартс</li>
-          <li>Спортивная аэробика</li>
+          <li>Регулярные тренировки с тренером</li>
+          <li>Участие в спартакиадах и чемпионатах</li>
+          <li>Развитие выносливости и командного духа</li>
         </ul>
-        <div class="sub-footer" data-role="Кафедра физической культуры" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=1e5bb8&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Тренер по баскетболу · запись в секцию" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Б&background=1e5bb8&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Соревнования и достижения</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Волейбол</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>Игра для тех, кто ценит командную работу и точность. Занятия — в волейбольном зале на втором этаже Дворца спорта.</p>
+        <h4>Что даёт</h4>
+        <ul>
+          <li>Тренировки в оборудованном зале</li>
+          <li>Спартакиады факультетов и общежитий</li>
+          <li>Развитие реакции и координации</li>
+        </ul>
+        <div class="sub-footer" data-role="Тренер по волейболу · запись в секцию" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=В&background=1e5bb8&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Футбол и мини-футбол</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>Большое и малое футбольные поля рядом с Дворцом спорта — тренировки круглый год.</p>
+        <h4>Что даёт</h4>
+        <ul>
+          <li>Тренировки на открытом поле</li>
+          <li>Турниры между факультетами и курсами</li>
+          <li>Развитие выносливости и скорости</li>
+        </ul>
+        <div class="sub-footer" data-role="Тренер по футболу · запись в секцию" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=1e5bb8&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Настольный теннис</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>Быстрая игра на реакцию и точность. Занятия — в теннисном зале на первом этаже Дворца спорта.</p>
+        <h4>Что даёт</h4>
+        <ul>
+          <li>Тренировки в оборудованном зале</li>
+          <li>Участие в университетских турнирах</li>
+          <li>Развитие концентрации и быстроты</li>
+        </ul>
+        <div class="sub-footer" data-role="Тренер по настольному теннису · запись в секцию" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Т&background=1e5bb8&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Пауэрлифтинг</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>Силовой спорт для тех, кто хочет стать сильнее. Наши спортсмены — обладатели «Кубка Донбасса».</p>
+        <h4>Что даёт</h4>
+        <ul>
+          <li>Тренировки в тренажёрном зале Дворца спорта</li>
+          <li>Участие в республиканских соревнованиях</li>
+          <li>Развитие силы и выносливости</li>
+        </ul>
+        <div class="sub-footer" data-role="Тренер по пауэрлифтингу · запись в секцию" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=П&background=1e5bb8&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Лёгкая атлетика</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>Бег, прыжки, метания — на беговой дорожке и площадке по лёгкой атлетике рядом с Дворцом спорта.</p>
+        <h4>Что даёт</h4>
+        <ul>
+          <li>Тренировки на открытых площадках</li>
+          <li>Сдача нормативов ГТО</li>
+          <li>Участие в спартакиадах и забегах</li>
+        </ul>
+        <div class="sub-footer" data-role="Тренер по лёгкой атлетике · запись в секцию" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Л&background=1e5bb8&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Шахматы</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>Игра для тех, кто любит думать. Наши шахматисты — победители Универсиады ЛНР.</p>
+        <h4>Что даёт</h4>
+        <ul>
+          <li>Тренировки в шахматном классе на втором этаже Дворца спорта</li>
+          <li>Участие в турнирах и Универсиаде</li>
+          <li>Развитие логики и стратегического мышления</li>
+        </ul>
+        <div class="sub-footer" data-role="Тренер по шахматам · запись в секцию" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ш&background=1e5bb8&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Дартс</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>Точность и спокойствие. Занятия — в специальном классе на втором этаже Дворца спорта.</p>
+        <h4>Что даёт</h4>
+        <ul>
+          <li>Тренировки в оборудованном классе</li>
+          <li>Участие в университетских соревнованиях</li>
+          <li>Развитие точности и концентрации</li>
+        </ul>
+        <div class="sub-footer" data-role="Тренер по дартсу · запись в секцию" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Д&background=1e5bb8&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Спортивная аэробика</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>Сочетание спорта и танца. Подходит и юношам, и девушкам, развивает пластику и выносливость.</p>
+        <h4>Что даёт</h4>
+        <ul>
+          <li>Тренировки в зале Дворца спорта</li>
+          <li>Участие в университетских и республиканских выступлениях</li>
+          <li>Хорошая физическая форма и осанка</li>
+        </ul>
+        <div class="sub-footer" data-role="Тренер по спортивной аэробике · запись в секцию" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=А&background=1e5bb8&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Соревнования и достижения</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Победы</h4>
         <ul>
@@ -805,31 +1126,47 @@ html[data-vk-theme="light"] {
         </ul>
         <h4>Традиционные мероприятия</h4>
         <ul>
-          <li>Спартакиада лечебного факультета (7 видов)</li>
-          <li>Спартакиада «Бодрость и здоровье»</li>
+          <li>Спартакиада лечебного факультета (7 видов спорта)</li>
+          <li>Спартакиада «Бодрость и здоровье» — среди преподавателей</li>
           <li>Спартакиада «Первокурсник»</li>
           <li>ГТО ко Всемирному дню здоровья</li>
-          <li>Спартакиада общежитий</li>
+          <li>Спартакиада студенческих общежитий</li>
         </ul>
+        <div class="sub-footer" data-role="Кафедра физической культуры · турниры и спартакиады" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=1e5bb8&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Инфраструктура</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Инфраструктура</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
+        <p>Вся спортивная база ЛГМУ находится в одном месте — возле Дворца спорта, где тренируются и сборные, и студенты по физкультуре.</p>
+        <h4>Дворец спорта — первый этаж</h4>
         <ul>
-          <li>Дворец спорта ЛГМУ — 2 зала + тренажёрный</li>
-          <li>Спортивный корпус — спартакиады</li>
-          <li>Тренажёрные залы для юношей и девушек</li>
+          <li>Большой баскетбольный зал</li>
+          <li>Тренажёрный зал</li>
+          <li>Теннисный зал</li>
         </ul>
-        <div class="sub-footer" data-role="Кафедра физической культуры" data-person="Сероштан Владимир Михайлович" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=В+М&background=1e5bb8&color=fff&size=88"></div>
+        <h4>Дворец спорта — второй этаж</h4>
+        <ul>
+          <li>Волейбольный зал</li>
+          <li>Шахматный класс</li>
+          <li>Класс дартса</li>
+        </ul>
+        <h4>Открытые площадки возле Дворца спорта</h4>
+        <ul>
+          <li>Большое футбольное поле</li>
+          <li>Малое футбольное поле</li>
+          <li>Волейбольное поле</li>
+          <li>Баскетбольная площадка</li>
+          <li>Беговая дорожка</li>
+          <li>Спортивная площадка по лёгкой атлетике</li>
+        </ul>
+        <div class="sub-footer" data-role="Кафедра физической культуры · инфраструктура" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ф&background=1e5bb8&color=fff&size=88"></div>
       </div>
     </details>
+
   </div>
 </details>
-
 <details class="accordion-item" data-category="culture">
   <summary class="accordion-header">
     <span class="header-left">
@@ -842,45 +1179,35 @@ html[data-vk-theme="light"] {
     <span class="arrow" aria-hidden="true">▼</span>
   </summary>
   <div class="body-content">
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Творческие коллективы</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Творческие коллективы</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <details class="sub-item">
-          <summary class="sub-header">
-            <span class="sub-title-wrap"><span class="sub-title">Вокальный коллектив «Акцент»</span></span>
-            <span class="sub-arrow" aria-hidden="true">▼</span>
-          </summary>
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Вокальный коллектив «Акцент»</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
           <div class="sub-content">
             <ul>
               <li>2-е место на конкурсе «Современный вокалист» (Москва, май 2026)</li>
               <li>Участие в университетских концертах</li>
             </ul>
-            <div class="sub-footer" data-role="Руководитель вокального коллектива" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=А&background=3d4ba6&color=fff&size=88"></div>
+            <div class="sub-footer" data-role="Руководитель коллектива · вокал" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=А&background=3d4ba6&color=fff&size=88"></div>
           </div>
         </details>
         <details class="sub-item">
-          <summary class="sub-header">
-            <span class="sub-title-wrap"><span class="sub-title">Танцевальные направления</span></span>
-            <span class="sub-arrow" aria-hidden="true">▼</span>
-          </summary>
+          <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Танцевальные направления</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
           <div class="sub-content">
             <ul>
               <li>Аэробика, традиционные танцы (включая индийский)</li>
               <li>Хореография для крупных мероприятий</li>
             </ul>
-            <div class="sub-footer" data-role="Руководитель танцевального направления" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Т&background=3d4ba6&color=fff&size=88"></div>
+            <div class="sub-footer" data-role="Руководитель направления · хореография" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Т&background=3d4ba6&color=fff&size=88"></div>
           </div>
         </details>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">КВН-движение</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">КВН-движение</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Что даёт</h4>
         <ul>
@@ -892,14 +1219,12 @@ html[data-vk-theme="light"] {
         <ul>
           <li>V Всероссийская школа КВН (Москва, ноябрь 2025)</li>
         </ul>
-        <div class="sub-footer" data-role="Центр культуры и досуга" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=К&background=3d4ba6&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Центр культуры и досуга · КВН" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=К&background=3d4ba6&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Ключевые конкурсы</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Ключевые конкурсы</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>«Мисс и Мистер ЛГМУ»</h4>
         <p>Главный конкурс года. 21 мая 2026 — «Мисс ЛГМУ 2026» Белова Е.</p>
@@ -911,14 +1236,12 @@ html[data-vk-theme="light"] {
           <li>Международный женский день (март)</li>
           <li>Конкурс «Наглядная фармакология»</li>
         </ul>
-        <div class="sub-footer" data-role="Центр культуры и досуга" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=К&background=3d4ba6&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Центр культуры и досуга · конкурсы" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=К&background=3d4ba6&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Центр «Исцеление»</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Центр «Исцеление»</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Направления</h4>
         <ul>
@@ -927,9 +1250,10 @@ html[data-vk-theme="light"] {
           <li>Православные традиции лечения</li>
           <li>Скрепы врачевания: милосердие, сострадание, гуманность, духовность</li>
         </ul>
-        <div class="sub-footer" data-role="Руководитель центра «Исцеление»" data-person="Бибик Виктория Викторовна" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=В+В&background=3d4ba6&color=fff&size=88"></div>
+        <div class="sub-footer" data-person="Бибик Виктория Викторовна" data-role="Руководитель центра · русская медицинская школа" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=В+В&background=3d4ba6&color=fff&size=88"></div>
       </div>
     </details>
+
   </div>
 </details>
 
@@ -945,11 +1269,9 @@ html[data-vk-theme="light"] {
     <span class="arrow" aria-hidden="true">▼</span>
   </summary>
   <div class="body-content">
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Клуб «Я горжусь»</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Клуб «Я горжусь»</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Клуб создаёт условия для патриотического, физического, интеллектуального и духовного развития студентов ЛГМУ.</p>
         <h4>Задачи</h4>
@@ -970,14 +1292,12 @@ html[data-vk-theme="light"] {
           <li>Сотрудничество с общественными объединениями и органами власти</li>
           <li>Участие в мероприятиях от университетского до международного уровня</li>
         </ul>
-        <div class="sub-footer" data-qr="https://vk.com/gorzhus_lgmu" data-role="Клуб «Я горжусь»" data-vk="https://vk.com/gorzhus_lgmu" data-avatar="https://ui-avatars.com/api/?name=Я&background=0a2e6b&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Клуб «Я горжусь» · патриотические акции и форумы" data-vk="https://vk.com/gorzhus_lgmu" data-qr="https://vk.com/gorzhus_lgmu" data-avatar="https://ui-avatars.com/api/?name=Я&background=0a2e6b&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Молодая Гвардия Единой России</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Молодая Гвардия Единой России</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Что даёт</h4>
         <ul>
@@ -985,14 +1305,12 @@ html[data-vk-theme="light"] {
           <li>Федеральные проекты и акции</li>
           <li>Развитие лидерских качеств</li>
         </ul>
-        <div class="sub-footer" data-role="Актив МГЕР ЛГМУ" data-vk="https://vk.com/mger_lnr" data-avatar="https://ui-avatars.com/api/?name=М&background=0a2e6b&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Актив МГЕР · лидерство и проекты" data-vk="https://vk.com/mger_lnr" data-qr="https://vk.com/mger_lnr" data-avatar="https://ui-avatars.com/api/?name=М&background=0a2e6b&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">«Волонтёры Победы»</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">«Волонтёры Победы»</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Форматы</h4>
         <ul>
@@ -1003,11 +1321,9 @@ html[data-vk-theme="light"] {
         </ul>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Ключевые мероприятия</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Ключевые мероприятия</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <ul>
           <li><strong>Диктант Победы</strong> — 24 апреля 2026</li>
@@ -1018,6 +1334,7 @@ html[data-vk-theme="light"] {
         </ul>
       </div>
     </details>
+
   </div>
 </details>
 
@@ -1033,11 +1350,9 @@ html[data-vk-theme="light"] {
     <span class="arrow" aria-hidden="true">▼</span>
   </summary>
   <div class="body-content">
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Структура Студсовета</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Структура Студсовета</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Состав</h4>
         <ul>
@@ -1052,14 +1367,12 @@ html[data-vk-theme="light"] {
           <li>Студенческие деканаты</li>
           <li>Студенческий клуб</li>
         </ul>
-        <div class="sub-footer" data-role="Студенческий совет ЛГМУ" data-person="Резниченко Глеб" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=А&background=2c6ba0&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Студенческий совет ЛГМУ · самоуправление" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=С&background=2c6ba0&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Функции и полномочия</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Функции и полномочия</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Права</h4>
         <ul>
@@ -1079,11 +1392,9 @@ html[data-vk-theme="light"] {
         <p><strong>Председатель входит в Учёный совет с правом голоса.</strong></p>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Ключевые мероприятия</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Ключевые мероприятия</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <ul>
           <li><strong>«Диалог на равных» с ректором</strong></li>
@@ -1095,11 +1406,9 @@ html[data-vk-theme="light"] {
         </ul>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Как присоединиться</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Как присоединиться</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <ul>
           <li>Стать старостой группы или курса</li>
@@ -1107,29 +1416,121 @@ html[data-vk-theme="light"] {
           <li>Работать в студенческом деканате</li>
           <li>Прийти с собственной инициативой</li>
         </ul>
-        <div class="sub-footer" data-role="Студенческий совет ЛГМУ" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=С&background=2c6ba0&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Студенческий совет ЛГМУ · как присоединиться" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=С&background=2c6ba0&color=fff&size=88"></div>
       </div>
     </details>
+
   </div>
 </details>
 
+<details class="accordion-item" data-category="profkom">
+  <summary class="accordion-header">
+    <span class="header-left">
+      <span class="icon" aria-hidden="true">🤝</span>
+      <span class="header-text">
+        <span class="title">Профсоюз студентов</span>
+        <span class="meta">защита прав · скидки · +2 балла в ординатуру</span>
+      </span>
+    </span>
+    <span class="arrow" aria-hidden="true">▼</span>
+  </summary>
+  <div class="body-content">
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Что такое профсоюз студентов</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>Профсоюзная организация студентов ЛГМУ — это официальное объединение, которое защищает права студентов и помогает в трудных ситуациях.</p>
+        <h4>Что это даёт</h4>
+        <ul>
+          <li>Защита прав и представительство в органах управления университетом</li>
+          <li>Материальная помощь в трудной жизненной ситуации</li>
+          <li>Скидки на обучение и снижение платы за общежитие</li>
+          <li>Помощь в решении конфликтов с администрацией</li>
+          <li>Информационная поддержка по всем студенческим вопросам</li>
+        </ul>
+        <h4>Кто может вступить</h4>
+        <ul>
+          <li>Студенты всех факультетов и курсов</li>
+          <li>Аспиранты и ординаторы</li>
+        </ul>
+        <div class="sub-footer" data-person="Гукалов Данил Андреевич" data-role="Председатель профкома · защита прав студентов" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Д+А&background=8a3d6b&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Как вступить</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>Вступить в профсоюз просто — это займёт несколько минут.</p>
+        <h4>Шаги</h4>
+        <ul>
+          <li>Обратиться в профком студентов — корпус №1 ЛГМУ</li>
+          <li>Заполнить заявление на вступление</li>
+          <li>Уплачивать профсоюзные взносы — 1% от стипендии</li>
+        </ul>
+        <h4>Что даёт членство</h4>
+        <ul>
+          <li>Право на материальную помощь</li>
+          <li>Право на скидки и льготы</li>
+          <li>Голос при принятии решений</li>
+        </ul>
+        <div class="sub-footer" data-person="Гукалов Данил Андреевич" data-role="Председатель профкома · вступление в профсоюз" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Д+А&background=8a3d6b&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Профсоюзная активность и баллы в ординатуру</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>Активное участие в работе профсоюза даёт <strong>+2 балла</strong> при поступлении в ординатуру — в рамках критерия «Н» Правил приёма.</p>
+        <h4>Что значит «активный участник»</h4>
+        <ul>
+          <li>Регулярно участвует в мероприятиях профкома</li>
+          <li>Помогает в организации событий</li>
+          <li>Состоит в профсоюзном активе</li>
+        </ul>
+        <h4>Дополнительные преимущества</h4>
+        <ul>
+          <li>Опыт организационной работы</li>
+          <li>Навыки коммуникации и лидерства</li>
+          <li>Знакомства с активом университета</li>
+        </ul>
+        <div class="join-block">
+          <strong>Важно</strong>
+          <p>Точные критерии «активного участника» уточняй в профкоме при вступлении. +2 балла суммируются с другими достижениями по критерию «Н», но не более 20 баллов суммарно.</p>
+        </div>
+        <div class="sub-footer" data-person="Гукалов Данил Андреевич" data-role="Председатель профкома · баллы за активность" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Д+А&background=8a3d6b&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Контакты и запись</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <h4>Профком студентов ЛГМУ</h4>
+        <ul>
+          <li>Председатель: <strong>Гукалов Данил Андреевич</strong></li>
+          <li>Местонахождение: корпус №1 ЛГМУ</li>
+          <li>Приёмные часы: уточнять в профкоме</li>
+        </ul>
+        <div class="sub-footer" data-person="Гукалов Данил Андреевич" data-role="Председатель профкома · контакты" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Д+А&background=8a3d6b&color=fff&size=88"></div>
+      </div>
+    </details>
+
+  </div>
+</details>
 <details class="accordion-item" data-category="career">
   <summary class="accordion-header">
     <span class="header-left">
       <span class="icon" aria-hidden="true">💼</span>
       <span class="header-text">
         <span class="title">Карьера</span>
-        <span class="meta">5 направлений</span>
+        <span class="meta">6 направлений</span>
       </span>
     </span>
     <span class="arrow" aria-hidden="true">▼</span>
   </summary>
   <div class="body-content">
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Найти работу</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Найти работу</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Помощь в трудоустройстве — от консультаций до прямых встреч с работодателями.</p>
         <h4>Что можно получить</h4>
@@ -1147,67 +1548,96 @@ html[data-vk-theme="light"] {
           <li>900+ будущих медиков</li>
           <li>Проводится ежегодно в апреле</li>
         </ul>
-        <div class="contact">
-          <strong>Контакты:</strong>
-          <a href="tel:+79591141352">+7 (959) 114-13-52</a> · <a href="mailto:careerLGMU@yandex.ru">careerLGMU@yandex.ru</a><br>
-          Корпус №2, 1 этаж, каб. №13
-        </div>
-        <div class="sub-footer" data-role="Центр карьеры" data-person="Россомахина Олеся Михайловна" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О+М&background=26468c&color=fff&size=88"></div>
+        <div class="sub-footer" data-person="Россомахина Олеся Михайловна" data-role="Центр карьеры · трудоустройство и ярмарки" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О+М&background=26468c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Работать во время учёбы</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Младший медицинский персонал</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
-        <p>С 3 курса можно официально работать средним медперсоналом и получать зарплату параллельно с учёбой.</p>
+        <p>Работа, которую можно начать <strong>уже с 1 курса</strong> — после сдачи квалификационного экзамена. Это официальное трудоустройство, медицинский стаж и гибкий график, совместимый с учёбой.</p>
+        <h4>Кто может работать</h4>
+        <ul>
+          <li>Студенты 1 курса и старше, сдавшие квалификационный экзамен</li>
+          <li>После экзамена выдаётся свидетельство о профессии рабочего: <strong>«Младшая медицинская сестра по уходу за больными»</strong> (код 24232)</li>
+        </ul>
+        <h4>Кем можно работать</h4>
+        <ul>
+          <li>Младшая медицинская сестра по уходу за больными</li>
+          <li>Санитар / санитарка</li>
+          <li>Помощник младшего медицинского персонала</li>
+        </ul>
+        <h4>Что это даёт</h4>
+        <ul>
+          <li><strong>Официальное трудоустройство</strong> — запись в трудовой книжке</li>
+          <li><strong>Медицинский стаж</strong> — идёт в общий стаж для ординатуры</li>
+          <li><strong>Заработок с 1 курса</strong> — стипендия + зарплата</li>
+          <li><strong>Гибкий график</strong> — совместимый с учёбой</li>
+          <li>Реальная практика ухода за пациентами под контролем медсестёр</li>
+        </ul>
+        <h4>Как получить допуск</h4>
+        <ul>
+          <li>Пройти обучение по программе «Младшая медицинская сестра по уходу за больными»</li>
+          <li>Сдать квалификационный экзамен (теория + практические навыки)</li>
+          <li>Получить свидетельство о профессии рабочего</li>
+        </ul>
+        <div class="join-block">
+          <strong>В ЛГМУ</strong>
+          <p>Более 700 студентов университета уже совмещают учёбу с работой в больницах, в том числе в качестве младших медицинских работников.</p>
+        </div>
+        <div class="sub-footer" data-role="Центр карьеры ЛГМУ · работа с 1 курса" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=М&background=26468c&color=fff&size=88"></div>
+      </div>
+    </details>
+
+    <details class="sub-item">
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Средний медицинский персонал</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
+      <div class="sub-content">
+        <p>С <strong>3 курса</strong> можно пройти аккредитацию и работать на должностях среднего медперсонала. Допуск действует <strong>5 лет</strong>, а работа идёт в медицинский стаж.</p>
+        <h4>Кто может получить допуск</h4>
+        <ul>
+          <li>Студенты, освоившие программу в объёме <strong>3 и более курсов</strong> по специальностям: «Лечебное дело», «Педиатрия», «Медико-профилактическое дело», «Стоматология»</li>
+          <li>Студенты направления «Сестринское дело» — после <strong>2 курсов</strong></li>
+        </ul>
+        <h4>Кем можно работать после 3 курса</h4>
+        <ul>
+          <li>Медицинская сестра / медицинский брат</li>
+          <li>Медицинская сестра палатная (постовая)</li>
+          <li>Медицинская сестра перевязочная</li>
+          <li>Медицинская сестра процедурная</li>
+          <li>Медицинская сестра приёмного отделения</li>
+          <li>Медицинская сестра участковая</li>
+          <li>Медицинская сестра патронажная</li>
+          <li>Медицинская сестра по приёму вызовов скорой помощи</li>
+          <li>Медицинский регистратор</li>
+        </ul>
+        <h4>Кем можно работать после 4 курса</h4>
+        <ul>
+          <li>Фельдшер по приёму и передаче вызовов бригадам скорой помощи</li>
+          <li>Фельдшер скорой медицинской помощи под контролем врача</li>
+        </ul>
         <h4>Что для этого нужно</h4>
         <ul>
-          <li>Освоить программу высшего образования в объёме <strong>трёх курсов и более</strong></li>
-          <li>Пройти аккредитацию: тестирование + практические навыки</li>
-          <li>Получить справку о допуске — она действует <strong>5 лет</strong></li>
+          <li>Освоить программу в объёме 3+ курсов</li>
+          <li>Пройти аккредитацию: тестирование + практический экзамен</li>
+          <li>Получить справку о допуске — действует <strong>5 лет</strong></li>
         </ul>
-        <h4>Кто подходит</h4>
+        <p>Основание: приказ Минздрава России №511н от 02.10.2024.</p>
+        <h4>Что это даёт</h4>
         <ul>
-          <li>«Лечебное дело»</li>
-          <li>«Педиатрия»</li>
-          <li>«Медико-профилактическое дело»</li>
-          <li>«Стоматология»</li>
+          <li>Официальное трудоустройство по специальности</li>
+          <li>Медицинский стаж для ординатуры</li>
+          <li>Полноценная работа в клинике параллельно с учёбой</li>
+          <li>Достойная заработная плата среднего медперсонала</li>
         </ul>
-        <h4>Должности</h4>
-        <ul>
-          <li>Медицинская сестра / брат</li>
-          <li>Медицинский лабораторный техник</li>
-          <li>Другие должности среднего медперсонала</li>
-        </ul>
-        <p>Основание: приказ Минздрава России №511н от 02.10.2024. Работа не отменяет учёбу — программа специалитета продолжается параллельно.</p>
-        <div class="sub-footer" data-role="Центр карьеры" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ц&background=26468c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Центр карьеры ЛГМУ · работа с 3 курса" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=С&background=26468c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Поступить в ординатуру</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Баллы в ординатуру</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
-        <p>63 специальности: клиническая медицина, науки о здоровье, фармация.</p>
-        <h4>Ключевые даты</h4>
-        <ul>
-          <li><strong>Приём документов:</strong> 1–25 июля 2026, до 16:00</li>
-          <li><strong>Вступительное тестирование:</strong> 29–30 июля 2026</li>
-          <li><strong>Завершение приёма оригинала:</strong> 3 августа (КЦП), 5 августа (платники)</li>
-          <li><strong>Зачисление:</strong> 4 августа (целевая квота), 5 августа (КЦП), 6 августа (платники)</li>
-          <li><strong>Дополнительный приём:</strong> до 29 августа 2026</li>
-        </ul>
-        <h4>Что важно знать</h4>
-        <ul>
-          <li>Очная форма: 2 года, кроме «Физической и реабилитационной медицины», «Сердечно-сосудистой хирургии», «Нейрохирургии» — 3 года</li>
-          <li>Не более 3 организаций и 2 специальностей в каждой</li>
-          <li>Выпускники текущего года: первичная аккредитация = вступительное испытание</li>
-        </ul>
-        <h4>Как получить дополнительные баллы</h4>
-        <p>Минимальный балл за тестирование — <strong>70</strong>. Баллы за достижения суммируются с результатом тестирования.</p>
+        <p>Баллы за индивидуальные достижения <strong>суммируются</strong> с результатом вступительного тестирования. Минимальный балл за тестирование — <strong>70</strong>.</p>
+        <h4>Индивидуальные достижения</h4>
         <ul>
           <li><strong>А.</strong> Стипендия Президента/Правительства РФ — <strong>20</strong></li>
           <li><strong>Б.</strong> Диплом с отличием — <strong>55</strong></li>
@@ -1227,14 +1657,16 @@ html[data-vk-theme="light"] {
           <strong>Пересечение критериев</strong>
           <p>«З» + «К» → только «К» (30, не 50). «Г» + «Л» → только один на выбор.</p>
         </div>
-        <div class="sub-footer" data-role="Приёмная комиссия ординатуры" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=26468c&color=fff&size=88"></div>
+        <div class="join-block">
+          <strong>Профсоюзная активность</strong>
+          <p><strong>+2 балла</strong> в рамках критерия «Н» для активных участников профсоюза.</p>
+        </div>
+        <div class="sub-footer" data-role="Приёмная комиссия ординатуры · баллы за достижения" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=26468c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Учиться по целевому направлению</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Учиться по целевому направлению</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Что даёт</h4>
         <ul>
@@ -1247,11 +1679,9 @@ html[data-vk-theme="light"] {
         <p>Заключить договор с больницей через Минздрав ЛНР до начала приёмной кампании.</p>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Прокачать soft skills</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Прокачать soft skills</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Навыки, которые нужны врачу не меньше, чем знания: общение с пациентами, работа в команде, лидерство.</p>
         <h4>Что даёт</h4>
@@ -1263,9 +1693,10 @@ html[data-vk-theme="light"] {
           <li>Тестирование на платформе softskills</li>
           <li>Выход на федеральные проекты, Мастерская управления «Сенеж»</li>
         </ul>
-        <div class="sub-footer" data-role="Центр надпрофессиональных компетенций" data-vk="https://vk.com/cnkolgmu" data-avatar="https://ui-avatars.com/api/?name=Ц&background=26468c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Центр надпрофессиональных компетенций · soft skills" data-vk="https://vk.com/cnkolgmu" data-qr="https://vk.com/cnkolgmu" data-avatar="https://ui-avatars.com/api/?name=Ц&background=26468c&color=fff&size=88"></div>
       </div>
     </details>
+
   </div>
 </details>
 
@@ -1275,17 +1706,15 @@ html[data-vk-theme="light"] {
       <span class="icon" aria-hidden="true">🛡️</span>
       <span class="header-text">
         <span class="title">Социальная поддержка</span>
-        <span class="meta">6 направлений</span>
+        <span class="meta">5 направлений</span>
       </span>
     </span>
     <span class="arrow" aria-hidden="true">▼</span>
   </summary>
   <div class="body-content">
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Стипендии</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Стипендии</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Виды</h4>
         <ul>
@@ -1295,14 +1724,12 @@ html[data-vk-theme="light"] {
           <li><strong>ПГАС</strong> — повышенная за особые достижения</li>
           <li><strong>Президента и Правительства РФ</strong></li>
         </ul>
-        <div class="sub-footer" data-role="Учебный отдел ЛГМУ" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=У&background=1e4d8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Учебный отдел · стипендии и выплаты" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=У&background=1e4d8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Материальная помощь</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Материальная помощь</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>25% стипендиального фонда.</p>
         <h4>Кому</h4>
@@ -1318,34 +1745,12 @@ html[data-vk-theme="light"] {
           <li>Возмещение расходов на лечение, протезирование</li>
           <li>Путёвки на санаторно-курортное лечение</li>
         </ul>
-        <div class="sub-footer" data-role="Учебный отдел ЛГМУ" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=У&background=1e4d8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Учебный отдел · материальная помощь" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=У&background=1e4d8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Профсоюз студентов</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
-      <div class="sub-content">
-        <h4>Что даёт</h4>
-        <ul>
-          <li>Защита прав и представительство</li>
-          <li>Материальная помощь в трудной ситуации</li>
-          <li>Скидки на обучение, снижение платы за общежитие</li>
-          <li><strong>+2 балла</strong> в ординатуру — критерий «Н»</li>
-        </ul>
-        <div class="contact">
-          <strong>Председатель:</strong>
-          Гукалов Данил Андреевич · корпус №1
-        </div>
-        <div class="sub-footer" data-role="Председатель профкома" data-person="Гукалов Данил Андреевич" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Д+А&background=1e4d8c&color=fff&size=88"></div>
-      </div>
-    </details>
-    <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Общежития</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Общежития</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Около 350 мест. Двух- и трёхместные комнаты, кухни с плитами, душевые с бойлерами, круглосуточная охрана.</p>
         <h4>Льготы</h4>
@@ -1353,14 +1758,12 @@ html[data-vk-theme="light"] {
           <li>Снижение платы при материальных трудностях</li>
           <li>Приоритет — сиротам, инвалидам, семейным студентам</li>
         </ul>
-        <div class="sub-footer" data-role="Отдел по работе с общежитиями" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=1e4d8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Отдел по работе с общежитиями · заселение и льготы" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О&background=1e4d8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Молодые семьи</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Молодые семьи</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <ul>
           <li>Юридическая помощь по семейным вопросам</li>
@@ -1369,14 +1772,12 @@ html[data-vk-theme="light"] {
           <li>Приоритетные места в общежитии</li>
           <li>Гибкий график для молодых родителей</li>
         </ul>
-        <div class="sub-footer" data-role="Управление по молодёжной политике" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=М&background=1e4d8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Управление по молодёжной политике · поддержка семей" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=М&background=1e4d8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Студенты с ВОТ</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Студенты с ВОТ</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>ВОТ — временно оккупированные территории.</p>
         <h4>Программы</h4>
@@ -1386,9 +1787,10 @@ html[data-vk-theme="light"] {
           <li>Единовременные выплаты при поступлении</li>
           <li>Социальное и психологическое сопровождение</li>
         </ul>
-        <div class="sub-footer" data-role="Приёмная комиссия ЛГМУ" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=П&background=1e4d8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Приёмная комиссия · программы для ВОТ" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=П&background=1e4d8c&color=fff&size=88"></div>
       </div>
     </details>
+
   </div>
 </details>
 
@@ -1404,11 +1806,9 @@ html[data-vk-theme="light"] {
     <span class="arrow" aria-hidden="true">▼</span>
   </summary>
   <div class="body-content">
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Социально-психологическая служба</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Социально-психологическая служба</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Бесплатные консультации для студентов и сотрудников.</p>
         <h4>С чем обращаться</h4>
@@ -1423,14 +1823,12 @@ html[data-vk-theme="light"] {
           <li>Бородавкина О.А. — педагог-психолог, <a href="tel:+79591263488">+7 (959) 126-34-88</a></li>
           <li>Коротенко Л.Н. — психолог, <a href="tel:+79595121508">+7 (959) 512-15-08</a></li>
         </ul>
-        <div class="sub-footer" data-role="Педагог-психолог" data-person="Бородавкина Ольга Анатольевна" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О+А&background=4a3d8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-person="Бородавкина Ольга Анатольевна" data-role="Педагог-психолог · консультации студентов" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=О+А&background=4a3d8c&color=fff&size=88"></div>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Центр ментального здоровья</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Центр ментального здоровья</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Направления</h4>
         <ul>
@@ -1446,11 +1844,9 @@ html[data-vk-theme="light"] {
         </ul>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Направления работы</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Направления работы</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <h4>Просвещение</h4>
         <ul>
@@ -1471,11 +1867,9 @@ html[data-vk-theme="light"] {
         </ul>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Контакты и запись</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Контакты и запись</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <ul>
           <li>Телефон: <a href="tel:+79591263488">+7 (959) 126-34-88</a></li>
@@ -1484,9 +1878,10 @@ html[data-vk-theme="light"] {
           <li>Бесплатно для студентов, аспирантов, сотрудников</li>
         </ul>
         <p><strong>Экстренная помощь:</strong> центр «Мы рядом».</p>
-        <div class="sub-footer" data-role="Социально-психологическая служба" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=С&background=4a3d8c&color=fff&size=88"></div>
+        <div class="sub-footer" data-role="Социально-психологическая служба · запись на консультацию" data-vk="https://vk.com/lgmu_official" data-qr="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=С&background=4a3d8c&color=fff&size=88"></div>
       </div>
     </details>
+
   </div>
 </details>
 </main>
@@ -1497,17 +1892,15 @@ html[data-vk-theme="light"] {
       <span class="info-accordion-icon" aria-hidden="true">📌</span>
       <span>
         <span class="info-accordion-text">О проекте</span>
-        <span class="info-accordion-meta">автор, администрация, определение направления</span>
+        <span class="info-accordion-meta">автор · администрация · МЕДМОЛ</span>
       </span>
     </span>
     <span class="info-accordion-arrow" aria-hidden="true">▼</span>
   </summary>
   <div class="info-body">
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Проект «Твои возможности МЕДМОЛ ЛГМУ»</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Проект «Твои возможности МЕДМОЛ ЛГМУ»</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Каталог студенческих возможностей, разработанный в рамках всероссийского студенческого проекта «Твой ход» лаборатории цифровой медицины ЛГМУ.</p>
         <div class="highlight">
@@ -1516,41 +1909,46 @@ html[data-vk-theme="light"] {
         <p>Проект помогает студентам ЛГМУ быстро находить направления для самореализации: от научных кружков и волонтёрства до спорта, культуры и карьерных возможностей. Каждый раздел содержит практические шаги для присоединения, контакты ответственных лиц и QR-коды для быстрого перехода к сообществам и платформам.</p>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Администрация ЛГМУ</span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Администрация ЛГМУ</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p>Руководство университета, к которому можно обратиться по вопросам учёбы, воспитательной работы, практики и международного сотрудничества.</p>
+
         <h4>Ректор</h4>
-        <div class="sub-footer" data-role="Ректор ЛГМУ" data-person="Левчин Артём Михайлович" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=А+М&background=0b3d91&color=fff&size=88"></div>
         <ul>
-          <li>Электронная почта: <a href="mailto:kanclgmu@mail.ru">kanclgmu@mail.ru</a></li>
-          <li>Приёмная: корпус №3, 2-й этаж, каб. №211</li>
+          <li><strong>Левчин Артём Михайлович</strong> — ректор ЛГМУ</li>
+          <li>Приёмная: <a href="mailto:kanclgmu@mail.ru">kanclgmu@mail.ru</a>, +7 (857) 234-71-13</li>
+          <li>Корпус №3, 2-й этаж, каб. №211</li>
         </ul>
+
         <h4>Проректоры</h4>
-        <div class="sub-footer" data-role="Проректор по учебной работе" data-person="Бибик Валерий Васильевич" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=В+В&background=0b3d91&color=fff&size=88"></div>
-        <div class="sub-footer" data-role="Проректор по стратегическому развитию и цифровой трансформации" data-person="Пустовой Юрий Григорьевич" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Ю+Г&background=0b3d91&color=fff&size=88"></div>
-        <div class="sub-footer" data-role="Проректор по научной работе" data-person="Кащенко Светлана Аркадьевна" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=С+А&background=0b3d91&color=fff&size=88"></div>
-        <div class="sub-footer" data-role="Проректор по клинической работе и ординатуре" data-person="Комарова Елена Борисовна" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Е+Б&background=0b3d91&color=fff&size=88"></div>
-        <div class="sub-footer" data-role="Проректор по международным связям, региональному развитию и взаимодействию с субъектами РФ" data-person="Витрищак Светлана Валентиновна" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=С+В&background=0b3d91&color=fff&size=88"></div>
-        <div class="sub-footer" data-role="Проректор по молодёжной политике, воспитательной и социальной работе" data-person="Черникова Наталья Сергеевна" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Н+С&background=0b3d91&color=fff&size=88"></div>
-        <div class="sub-footer" data-role="Проректор по СПО и связям с общественностью" data-person="Мякоткина Галина Васильевна" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=Г+В&background=0b3d91&color=fff&size=88"></div>
+        <ul>
+          <li><strong>Бибик Валерий Васильевич</strong> — проректор по учебной работе</li>
+          <li><strong>Пустовой Юрий Григорьевич</strong> — проректор по стратегическому развитию и цифровой трансформации</li>
+          <li><strong>Кащенко Светлана Аркадьевна</strong> — проректор по научной работе</li>
+          <li><strong>Комарова Елена Борисовна</strong> — проректор по клинической работе и ординатуре</li>
+          <li><strong>Витрищак Светлана Валентиновна</strong> — проректор по международным связям, региональному развитию и взаимодействию с субъектами РФ</li>
+          <li><strong>Черникова Наталья Сергеевна</strong> — проректор по молодёжной политике, воспитательной и социальной работе</li>
+          <li><strong>Мякоткина Галина Васильевна</strong> — проректор по СПО и связям с общественностью</li>
+        </ul>
+
         <h4>Советник при ректорате</h4>
-        <div class="sub-footer" data-role="Советник при ректорате" data-person="Макарова Анна Викторовна" data-vk="https://vk.com/lgmu_official" data-avatar="https://ui-avatars.com/api/?name=А+В&background=0b3d91&color=fff&size=88"></div>
-        <div class="contact">
-          <strong>Общие контакты:</strong>
-          <a href="mailto:kanclgmu@mail.ru">kanclgmu@mail.ru</a><br>
-          Приёмная: +7 (857) 234-71-13
-        </div>
+        <ul>
+          <li><strong>Макарова Анна Викторовна</strong> — советник при ректорате</li>
+        </ul>
+
+        <h4>Общие контакты</h4>
+        <ul>
+          <li>Email: <a href="mailto:kanclgmu@mail.ru">kanclgmu@mail.ru</a></li>
+          <li>Телефоны: +7 (857) 234-71-13, +7 (857) 234-71-16, +7 (959) 263-10-10</li>
+          <li>Адрес: 291045, ЛНР, г. Луганск, кв. 50-летия Обороны Луганска, д. 1Г</li>
+        </ul>
       </div>
     </details>
+
     <details class="sub-item">
-      <summary class="sub-header">
-        <span class="sub-title-wrap"><span class="sub-title">Что такое МЕДМОЛ </span></span>
-        <span class="sub-arrow" aria-hidden="true">▼</span>
-      </summary>
+      <summary class="sub-header"><span class="sub-title-wrap"><span class="sub-title">Что такое МЕДМОЛ</span></span><span class="sub-arrow" aria-hidden="true">▼</span></summary>
       <div class="sub-content">
         <p><strong>МЕДМОЛ</strong> — всероссийское молодёжное движение медицинской направленности, объединяющее студентов-медиков, ординаторов и молодых врачей. Это сообщество проактивных людей, которые хотят развивать медицину в России, ежедневно спасая жизни.</p>
         <h4>Ключевые характеристики</h4>
@@ -1565,6 +1963,7 @@ html[data-vk-theme="light"] {
         <p>Движение действует в медицинских вузах и колледжах по всей стране. В ЛГМУ МЕДМОЛ интегрирован в систему молодёжной политики университета.</p>
       </div>
     </details>
+
   </div>
 </details>
 
@@ -1580,8 +1979,7 @@ html[data-vk-theme="light"] {
 </div>
 
 <footer>
-  <span>© ЛГМУ · МЕДМОЛ</span>
-  <span class="footer-note">Обновлено: октябрь 2026</span>
+  <span>© ЛГМУ · МЕДМОЛ · 2026</span>
 </footer>
 </div>
 
@@ -1642,22 +2040,33 @@ html[data-vk-theme="light"] {
     else window.addEventListener('load', doRender, { once: true });
   }
 
+  var FALLBACK_VK = 'https://vk.com/lgmu_official';
+
   function buildSubFooters() {
     $$('.sub-footer').forEach(function (placeholder) {
       var d = placeholder.dataset;
-      if (!d.qr && !d.person && !d.tel && !d.email && !d.vk) {
+
+      var role = d.role || '';
+      var isStarostaSNK = /Староста СНК/i.test(role);
+      var person = isStarostaSNK ? '' : (d.person || '');
+
+      var vkLink = d.vk || FALLBACK_VK;
+      var qrLink = d.qr || FALLBACK_VK;
+
+      if (!d.tel && !d.email && !person && !role) {
         placeholder.remove();
         return;
       }
+
       var links = [];
       if (d.tel) links.push('<a href="tel:' + d.tel + '">' + formatPhone(d.tel) + '</a>');
       if (d.email) links.push('<a href="mailto:' + d.email + '">' + d.email + '</a>');
-      if (d.vk) links.push('<a href="' + d.vk + '" target="_blank" rel="noopener noreferrer">Контакт для связи</a>');
-      if (d.qr) links.push('<a href="' + d.qr + '" target="_blank" rel="noopener noreferrer">Сообщество направления</a>');
+      if (vkLink) links.push('<a href="' + vkLink + '" target="_blank" rel="noopener noreferrer">Контакт для связи</a>');
+      if (qrLink) links.push('<a href="' + qrLink + '" target="_blank" rel="noopener noreferrer">Сообщество направления</a>');
 
       placeholder.innerHTML = '';
 
-      if (d.qr) renderQR(placeholder, d.qr);
+      if (qrLink) renderQR(placeholder, qrLink);
 
       var contact = document.createElement('div');
       contact.className = 'sub-contact';
@@ -1666,7 +2075,7 @@ html[data-vk-theme="light"] {
         var av = document.createElement('img');
         av.className = 'sub-avatar';
         av.src = d.avatar;
-        av.alt = d.person || d.role || '';
+        av.alt = person || role;
         av.loading = 'lazy';
         av.onerror = function () { this.style.display = 'none'; };
         contact.appendChild(av);
@@ -1674,9 +2083,9 @@ html[data-vk-theme="light"] {
 
       var info = document.createElement('div');
       info.className = 'sub-contact-info';
-      var html = '<span class="sub-contact-label">' + (d.person ? 'Ответственный' : 'Куда обратиться') + '</span>';
-      if (d.person) html += '<span class="sub-contact-name">' + d.person + '</span>';
-      if (d.role) html += '<span class="sub-contact-role">' + d.role + '</span>';
+      var html = '<span class="sub-contact-label">' + (person ? 'Ответственный' : 'Куда обратиться') + '</span>';
+      if (person) html += '<span class="sub-contact-name">' + person + '</span>';
+      if (role) html += '<span class="sub-contact-role">' + role + '</span>';
       if (links.length) html += '<div class="sub-contact-links">' + links.join('') + '</div>';
       info.innerHTML = html;
       contact.appendChild(info);
@@ -1851,7 +2260,7 @@ html[data-vk-theme="light"] {
     var btn = document.getElementById('shareBtn');
     if (!btn) return;
     btn.addEventListener('click', async function () {
-      var shareData = { title: document.title, text: 'Возможности МЕДМОЛ ЛГМУ', url: window.location.href };
+      var shareData = { title: document.title, text: 'Твои возможности МЕДМОЛ ЛГМУ', url: window.location.href };
       try {
         if (window.VKBridge) {
           await VKBridge.send('VKWebAppShare', { link: window.location.href });
